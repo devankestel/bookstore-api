@@ -19,6 +19,8 @@ zoe_zack = Author.create(name: "Zoe Zack")
 bill_burray = Author.create(name: "Bill Burray")
 charlie_chuck = Author.create(name: "Charlie Chuck")
 
+authors = Author.all
+
 book1 = Book.create(title: "The Great Escape", author: charlie_chuck, publisher: abc_publisher, price: 24.20)
 book2 = Book.create(title: "Saving Myself", author: bill_burray, publisher: abc_publisher, price: 14.13)
 book3 = Book.create(title: "The Killer Doctors", author: zoe_zack, publisher: abc_publisher, price: 15.12)
@@ -34,5 +36,14 @@ bookc = Book.create(title: "Lilly Reborn", author: amanda_djidjinski, publisher:
 bookd = Book.create(title: "Anathema", author: zoe_zack, publisher: zoe_zack, price: 9.41)
 booke = Book.create(title: "Best Of", author: roberta_rock, publisher: foobar_corporation, price: 12.24)
 bookf = Book.create(title: "Anyway", author: bill_burray, publisher: foobar_corporation, price: 19.99)
+
+books = Book.all 
+
+for author in authors
+    for book in books
+        value = rand(0..10)
+        Npscore.create(value: value, author: author, book: book) 
+    end
+end
 
 
